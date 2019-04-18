@@ -27,8 +27,8 @@ percent_change_long <- gather(dogs_percent_change,
          factor_key=TRUE)
 
 ggplot(percent_change_long, aes(x = year, y = value, group = measurement)) +
-  geom_line(aes(color = measurement))+
-  geom_point(aes(color = measurement)) + 
+  geom_line(aes(color = measurement), size = 1.25)+
+  geom_point(aes(color = measurement), size = 2.5) + 
   ylim(-3, 2) +
   annotate("rect",
            xmin = -Inf,
@@ -75,6 +75,6 @@ ggplot(percent_change_long, aes(x = year, y = value, group = measurement)) +
   scale_y_continuous(labels = function(x) paste0(x, "%"))
 
 
-ggsave("dog_size.png", width = 5, height = 5)
+ggsave("dog_size.png", width = 6, height = 5)
 
 
